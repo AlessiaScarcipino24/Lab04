@@ -19,7 +19,9 @@ def main():
 
         if scelta == "1":
             nuovo_nome = input("Inserisci il nuovo nome del centro fieristico: ")
-            # TODO: Aggiorna il nome del centro fieristico
+            """ Aggiorna il nome del centro fieristico """
+            lingotto.nome = nuovo_nome
+            print(f'Nome aggiornato con successo a: {lingotto.nome}')
 
         elif scelta == "2":
             file_path = "dati_lingotto.csv"
@@ -32,11 +34,9 @@ def main():
         elif scelta == "3":
             codice_stand = input("Codice stand: ")
             codice_espositore = input("Codice espositore: ")
-            try:
-                lingotto.assegna_stand_a_espositore(codice_stand, codice_espositore)
-                print("Stand assegnato con successo.")
-            except Exception as e:
-                print(f"Errore: {e}")
+
+            lingotto.assegna_stand_a_espositore(codice_stand, codice_espositore)
+            # il messaggio di errore viene stampato direttamente dentro la funzione se fallisce
 
         elif scelta == "4":
             print("\n--- Elenco espositori ---")
